@@ -1,8 +1,23 @@
+import LoginForm from "./Components/LoginUser";
+import RegisterForm from "./Components/RegisterUser";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 function App() {
+  const loginUser = (user) => {
+    console.log(user, "logged in");
+  };
+
   return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Route
+          path="/login"
+          exact
+          render={() => <LoginForm login={loginUser} />}
+        />
+        <Route path="/register" exact render={() => <RegisterForm />} />
+      </div>
+    </Router>
   );
 }
 
