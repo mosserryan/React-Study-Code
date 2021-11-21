@@ -29,9 +29,9 @@ const LoginForm = ({ login }) => {
       return;
     }
     if (email && password) {
-      const checkCredentails = await getUsers(email, password);
+      const singleUser = await getUser(email);
 
-      if (checkCredentails === true) {
+      if (singleUser.email && singleUser.password === password) {
         login({ email, password });
         history.push("/teamDashboard");
       } else {
@@ -40,21 +40,30 @@ const LoginForm = ({ login }) => {
     }
   };
 
-  const getUsers = async (email, password) => {
+  const getUser = async (email) => {
+    //Having to grab all the users, need to find another way later.
     const res = await fetch("http://localhost:5000/users");
 
     const data = await res.json();
+    console.log(data);
 
-    const sameEmail = await data.some((i) => i.email.includes(email));
+    let userObj;
 
-    const samePassword = await data.some((i) => i.password.includes(password));
+    data.forEach((user) => {
+      if (user.email === email) {
+        userObj = user;
+      }
+    });
 
-    if (sameEmail && samePassword === true) {
-      return true;
-    } else {
-      return false;
-    }
+    return userObj;
   };
+
+  /* const getSingleUser = async (email) => {
+    const res = await fetch(`http://localhost:5000/users/${email}`);
+    const data = await res.json();
+
+    return data;
+  }; */
 
   return (
     <div className="container">
@@ -66,7 +75,10 @@ const LoginForm = ({ login }) => {
             <h5>Team Member</h5>
             <div className="d-flex justify-content-end social_icon">
               <span>
-                <i className="fab fa-facebook-square" />
+                <Link
+                  to="https://www.facebook.com/MauiVisionRentals"
+                  className="fab fa-facebook-square"
+                />
               </span>
               <span>
                 <i className="fab fa-google-plus-square" />
