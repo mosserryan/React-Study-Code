@@ -6,6 +6,13 @@
       "email": "mosser.ryan.a@gmail.com",
       "password": "RyeGuy12",
       "id": 1
+    },
+    {
+      "firstName": "Rye",
+      "lastName": "Guy",
+      "email": "mosser@gamemail.com",
+      "password": "saintsrow2",
+      "id": 2
     }
   ]
 }
