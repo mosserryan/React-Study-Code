@@ -1,5 +1,6 @@
 import LoginForm from "./Components/LoginUser";
 import RegisterForm from "./Components/RegisterUser";
+import UserDashboard from "./Components/UserDashboard";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           render={() => <LoginForm login={loginUser} />}
         />
         <Route path="/register" exact render={() => <RegisterForm />} />
+        <Route path="/userDashboard" exact render={() => <UserDashboard />} />
       </div>
     </Router>
   );

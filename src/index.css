@@ -121,3 +121,13 @@ a {
 .bottom {
   margin-bottom: 3rem;
 }
+
+.sideBar {
+  height: 100%;
+  width: 250px;
+  background-color: #e7bd3d;
+}
+
+.test {
+  color: red;
+}

@@ -33,7 +33,7 @@ const LoginForm = ({ login }) => {
 
       if (singleUser.email && singleUser.password === password) {
         login({ email, password });
-        history.push("/teamDashboard");
+        history.push("/userDashboard");
       } else {
         toast.error("Incorrect Email or Password");
       }
