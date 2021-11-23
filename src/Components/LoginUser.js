@@ -43,12 +43,13 @@ const LoginForm = ({ login }) => {
   const getUser = async (email) => {
     //Having to grab all the users, need to find another way later.
     const res = await fetch("http://localhost:5000/users");
-
+    // data is the a waited result for the response in JSON format.
     const data = await res.json();
     console.log(data);
 
     let userObj;
-
+    // In the data object we go through each nested object and look for the email value.
+    // Until we find the email that equals email.
     data.forEach((user) => {
       if (user.email === email) {
         userObj = user;
