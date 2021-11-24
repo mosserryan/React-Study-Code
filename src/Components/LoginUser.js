@@ -22,21 +22,27 @@ const LoginForm = ({ login }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) {
-      alert("Please add a username!");
-    } else if (!password) {
-      alert("You must add a password!");
-      return;
-    }
+    checkInputs(email, password);
+
     if (email && password) {
       const singleUser = await getUser(email);
 
       if (singleUser.email && singleUser.password === password) {
+        // For now "login" function is just passed in from "App" and it just console logs the users credentials that are being passed in.
         login({ email, password });
         history.push("/userDashboard");
       } else {
         toast.error("Incorrect Email or Password");
       }
+    }
+  };
+
+  const checkInputs = (email, password) => {
+    if (!email) {
+      alert("Please add a username!");
+    } else if (!password) {
+      alert("You must add a password!");
+      return;
     }
   };
 
