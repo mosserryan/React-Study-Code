@@ -1,34 +1,40 @@
 import React from "react";
+import HomeIcon from "@mui/icons-material/Home";
+import LogoutIcon from "@mui/icons-material/Logout";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import LuggageIcon from "@mui/icons-material/Luggage";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import EmailIcon from "@mui/icons-material/Email";
 
 export const NavBarData = [
   {
     title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    icon: <HomeIcon />,
+    link: "/userDashboard",
   },
   {
-    title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    title: "Properties",
+    icon: <ApartmentIcon />,
+    link: "/userDashboard/properties",
   },
   {
-    title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    title: "Owners",
+    icon: <PeopleAltIcon />,
+    link: "/userDashboard/owners",
   },
   {
-    title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    title: "Bookings",
+    icon: <LuggageIcon />,
+    link: "/userDashboard/bookings",
   },
   {
-    title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    title: "Messages",
+    icon: <EmailIcon />,
+    link: "/userDashboard/messages",
   },
   {
-    title: "Home",
-    icon: "fa fa-home",
-    link: "https://www.facebook.com/MauiVisionRentals",
+    title: "Logout",
+    icon: <LogoutIcon />,
+    link: "/login",
   },
 ];
