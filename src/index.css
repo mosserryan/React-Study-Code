@@ -124,10 +124,60 @@ a {
 
 .sideBar {
   height: 100%;
-  width: 250px;
-  background-color: #e7bd3d;
+  width: 230px;
 }
 
-.test {
-  color: red;
+.sideBarList {
+  height: 100%;
+  width: 100%;
+  background-color: #ffc116;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.sideBarList li .link {
+  color: white;
+  width: 200px;
+  height: 70px;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideBarList .row:hover {
+  cursor: pointer;
+  background-color: #ffaf02;
+}
+
+.link #title {
+  flex: 50%;
+  margin: 0;
+}
+
+.link #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+
+.sideBarList #active {
+  background-color: #ffaf02;
+}
+
+.sideBarList .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffc116;
+
+  border-bottom: solid 3px rgb(255, 179, 0);
 }
