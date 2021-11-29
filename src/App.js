@@ -17,7 +17,7 @@ function App() {
           render={() => <LoginForm login={loginUser} />}
         />
         <Route path="/register" exact render={() => <RegisterForm />} />
-        <Route path="/userDashboard" exact render={() => <UserDashboard />} />
+        <Route path="/userDashboard" render={() => <UserDashboard />} />
       </div>
     </Router>
   );
